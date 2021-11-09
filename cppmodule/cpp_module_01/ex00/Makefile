@@ -1,14 +1,14 @@
-SRCS = Phone_book.cpp Contact.cpp main.cpp
+SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp 
 OBJS =$(SRCS:.cpp=.o)
-CXX	= clang++
-CXXFLAGS	= -Wall -Wextra -Werror -I.
+CC	= clang++
+CFLAGS	= -Wall -Wextra -Werror -I.
 RM	= rm -f
-NAME	= phone_book
+NAME	= main
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+			$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 			$(RM) $(OBJS)

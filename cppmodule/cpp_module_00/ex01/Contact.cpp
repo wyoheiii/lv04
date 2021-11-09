@@ -1,12 +1,12 @@
-#include "phone_book.hpp"
-std::string    member::print_firstname()
+#include "Contact.hpp"
+std::string    Contact::print_firstname()
 {return(this->firstname);}
-std::string    member::print_lastname()
+std::string    Contact::print_lastname()
 {return(this->lastname);}
-std::string    member::print_nickname()
+std::string    Contact::print_nickname()
 {return(this->nickname);}
 
-void    member::print_all()
+void    Contact::print_all()
 {
     std::cout<<"first name :";
     std::cout<<this->firstname<<std::endl;
@@ -19,7 +19,7 @@ void    member::print_all()
     std::cout<<"darkest secret :";
     std::cout<<this->darkestsecret<<std::endl;
 }
-void  member::set()
+void  Contact::set()
 {
     std::cout << "first name WO IRERO:";
     std::getline(std::cin,this->firstname);
@@ -37,7 +37,7 @@ void  member::set()
     std::getline(std::cin,this->darkestsecret);
     std::cout<<"OTU"<<std::endl;
 }
-void member::del()
+void Contact::del()
 {
     this->nickname.clear();
     this->lastname.clear();

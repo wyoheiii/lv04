@@ -1,10 +1,11 @@
-#ifndef PHONE_BOOK_HPP
-#define PHONE_BOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-#include <iostream>
-#include <string>
-#include <iomanip>
-class member
+# include <iostream>
+# include <string>
+# include <iomanip>
+
+class Contact
 {
     public:
         void    set();
@@ -13,6 +14,7 @@ class member
         std::string    print_nickname();
         void    print_all();
         void    del();
+        
 
 
     private:
@@ -21,8 +23,6 @@ class member
         std::string nickname;
         std::string phonenumber;
         std::string darkestsecret;
-
-
 };
 
 #endif
