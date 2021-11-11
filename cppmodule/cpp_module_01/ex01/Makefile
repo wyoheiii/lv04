@@ -1,9 +1,9 @@
-SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp 
+SRCS = main.cpp Zombie.cpp ZombieHorde.cpp
 OBJS =$(SRCS:.cpp=.o)
 CXX	= clang++
 CXXFLAGS	= -Wall -Wextra -Werror -I.
 RM	= rm -f
-NAME	= ZOMBIEEEEEEEEEEEEEEEEEEEEEEEEE
+NAME	= NOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
 
 all:		$(NAME)
 
