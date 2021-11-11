@@ -1,4 +1,4 @@
-SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp 
+SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp a
 OBJS =$(SRCS:.cpp=.o)
 CC	= clang++
 CFLAGS	= -Wall -Wextra -Werror -I.
