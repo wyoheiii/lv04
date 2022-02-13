@@ -17,6 +17,8 @@ class Phone_book
         int     full_contact_first_del(Contact *contact);
         void    serch(Contact *contact, int list_size);
         std::string     set_str(std::string str);
+        void show_contact(Contact *contact,int list_size);
+        void serch_contact(Contact *contact, int list_size);
 };
 
 #endif

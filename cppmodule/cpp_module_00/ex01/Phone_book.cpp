@@ -8,41 +8,34 @@ std::string  Phone_book::set_str(std::string str)
     }
     return(str);
 }
-
-void Phone_book::serch(Contact *contact, int list_size)
+void Phone_book::show_contact(Contact *contact, int list_size)
 {
-    if(list_size == 0)
+    std::cout << "     index|first name| last name|  nickname|"<<std::endl;
+    for(int i = 0; i < list_size;i++)
     {
-        std::cout<<"OMAE NO TOMODATI 0 NIN"<<std::endl;
-        return ;
+        std::cout << std::setw(10);
+        std::cout << i+1;
+        std::cout <<'|';
+        std::cout << std::setw(10);
+        std::cout << set_str(contact[i].print_firstname());
+        std::cout <<'|';
+        std::cout << std::setw(10);
+        std::cout << set_str(contact[i].print_lastname());
+        std::cout << '|';
+        std::cout << std::setw(10);
+        std::cout << set_str(contact[i].print_nickname());
+        std::cout << '|'<<std::endl;
     }
-    else
-    { 
-        std::cout << "     index|first name| last name|  nickname|"<<std::endl;
-        for(int i = 0; i < list_size;i++)
-        {
-            std::cout << std::setw(10);
-            std::cout << i+1;
-            std::cout <<'|';
-            std::cout << std::setw(10);
-            std::cout << set_str(contact[i].print_firstname());
-            std::cout <<'|';
-            std::cout << std::setw(10);
-            std::cout << set_str(contact[i].print_lastname());
-            std::cout << '|';
-            std::cout << std::setw(10);
-            std::cout << set_str(contact[i].print_nickname());
-            std::cout << '|'<<std::endl;
-        }
-    }
-    std::string idx;
-    int j;
+}
+void Phone_book::serch_contact(Contact *contact, int list_size)
+{
+    std::string str;
     while(std::cin.good())
     {
         std::cout<<"SEARCH SIMASU SUUTI WO IRERO (1~8):";
-        std::getline(std::cin,idx);
-        j = atoi(idx.c_str());
-        if(idx.size() == 1 && 9 > j && j > 0 &&  list_size >= j)
+        std::getline(std::cin,str);
+        int j = atoi(str.c_str());
+        if(str.size() == 1 && 9 > j && j > 0 && list_size >= j)
         {
             contact[j - 1].print_all();
             break;
@@ -50,6 +43,16 @@ void Phone_book::serch(Contact *contact, int list_size)
         else
             std::cout<<"YARINAOSE!" <<std::endl;
     }
+}
+void Phone_book::serch(Contact *contact, int list_size)
+{
+    if(list_size == 0)
+    {
+        std::cout<<"OMAE NO TOMODATI 0 NIN"<<std::endl;
+        return ;
+    }
+    show_contact(contact,list_size);
+    serch_contact(contact,list_size);
 }
 
 int Phone_book::full_contact_first_del(Contact *contact)
@@ -88,8 +91,6 @@ void Phone_book::get_contact(Contact *contact, int *count)
     }
     contact[*count].set();
 }
-
-
 
 void Phone_book::god_book(void)
 {
