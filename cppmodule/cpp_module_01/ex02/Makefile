@@ -3,7 +3,7 @@ OBJS =$(SRCS:.cpp=.o)
 CXX	= clang++
 CXXFLAGS	= -Wall -Wextra -Werror -I.
 RM	= rm -f
-NAME	= NOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+NAME	= main
 
 all:		$(NAME)
 

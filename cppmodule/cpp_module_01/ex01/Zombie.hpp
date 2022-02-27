@@ -13,8 +13,6 @@ class Zombie
 
     private:
         std::string _name;
-        
-
 };
 Zombie *ZombieHorde(int N,std::string name);
 #endif

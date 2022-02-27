@@ -5,13 +5,14 @@
 class Weapon
 {
     public:
-        Weapon(std::string type);
-        ~Weapon(void);
-        void setType(std::string type);
-        const std::string &getType(void);
+
+    Weapon(std::string name);
+    ~Weapon(void);
+    const std::string &getType(void);
+    void  setType(std::string name);
 
     private:
-        std::string _type;
+    std::string _weapon_name;
 
 };
 

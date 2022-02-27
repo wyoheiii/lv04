@@ -2,14 +2,19 @@
 #define HUMANB_HPP
 
 #include <iostream>
+#include "Weapon.hpp"
 class HumanB
 {
-    public:
-   
-
     private:
+    std::string _name;
+    Weapon *_weapon ;
+    public:
 
+    HumanB(std::string name);
+    ~HumanB();
 
+    void attack(void);
+    void setWeapon(Weapon &wname);
 };
 
 #endif

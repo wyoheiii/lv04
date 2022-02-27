@@ -1,9 +1,9 @@
 SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJS =$(SRCS:.cpp=.o)
 CXX	= clang++
-CXXFLAGS	= -Wall -Wextra -Werror -I.
+CXXFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
 RM	= rm -f
-NAME	= NOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+NAME	= kenka
 
 all:		$(NAME)
 
@@ -18,4 +18,4 @@ fclean:		clean
 
 re:			fclean $(NAME)
 
-.PHONY:		all clean fclean re 
+.PHONY:		all clean fclean re

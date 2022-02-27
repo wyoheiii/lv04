@@ -9,8 +9,9 @@ int main(void)
     std::cout<< &string <<std::endl;
     std::cout<< stringPTR <<std::endl;
     std::cout<< &stringREF <<std::endl;
-    std::cout<< "==============="<<std::endl;
-    std::cout<< *stringPTR<<std::endl;
+    std::cout<< "=======atai========"<<std::endl;
+    std::cout<< string <<std::endl;
+    std::cout<< *stringPTR <<std::endl;
     std::cout<< stringREF<<std::endl;
     
 }
