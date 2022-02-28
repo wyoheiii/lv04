@@ -8,9 +8,6 @@ class Phone_book
 {
     public:
         void god_book(void);
-
-
-
     private:
         Contact contact[8];
         void    add_contact(Contact *contact, int *count);

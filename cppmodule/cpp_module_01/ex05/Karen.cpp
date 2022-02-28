@@ -21,38 +21,38 @@ void Karen::warning(){
     std::cout << "years whereas you started working here since last month." <<std::endl;
 }
 void Karen::complain(std::string level) {
-    int i,j,k,l;
-    i = ("DEBUG" == level);
-    j = ("ERROR" == level);
-    k = ("INFO" == level);
-    l = ("WARNING" == level);
-    switch (i) {
+    int debug,error,info,warning;
+    debug = ("DEBUG" == level);
+    error = ("ERROR" == level);
+    info = ("INFO" == level);
+    warning = ("WARNING" == level);
+    switch (debug) {
         case 1:
             (this->*func[0])();
+            return;
         default:
             break;
     }
-    switch (j) {
+    switch (error) {
         case 1:
             (this->*func[1])();
+            return;
         default:
             break ;
     }
-    switch (k) {
+    switch (info) {
         case 1:
             (this->*func[2])();
+            return;
         default:
             break ;
     }
-    switch (l) {
+    switch (warning) {
         case 1:
             (this->*func[3])();
+            return;
         default:
             break ;
     }
-    //debug 0;
-    //error 6;
-    //info 12;
-    //warning 17;
 }
 
