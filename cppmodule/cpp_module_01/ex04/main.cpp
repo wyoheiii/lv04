@@ -14,7 +14,9 @@ bool is_dir(char *av)
 void replace_file(char **av){
 
     File file(av[1],av[2],av[3]);
+    // ofstream kakikomi
     std::ofstream ofs("newfile");
+    // ifstream yomikomi
     std::ifstream ifs(file.get_file());
 
     if (ifs.fail() || ofs.fail()){

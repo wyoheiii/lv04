@@ -1,9 +1,9 @@
 #include "Phone_book.hpp"
-std::string  Phone_book::set_str(std::string str)
+std::string  Phone_book::trim_str(std::string str)
 {
     if(str.size() > 10)
     {
-        str=str.substr(0,10);
+        str = str.substr(0,10);
         str[9]='.';
     }
     return(str);
@@ -13,18 +13,10 @@ void Phone_book::show_contact(Contact *contact, int list_size)
     std::cout << "     index|first name| last name|  nickname|"<<std::endl;
     for(int i = 0; i < list_size;i++)
     {
-        std::cout << std::setw(10);
-        std::cout << i+1;
-        std::cout <<'|';
-        std::cout << std::setw(10);
-        std::cout << set_str(contact[i].print_firstname());
-        std::cout <<'|';
-        std::cout << std::setw(10);
-        std::cout << set_str(contact[i].print_lastname());
-        std::cout << '|';
-        std::cout << std::setw(10);
-        std::cout << set_str(contact[i].print_nickname());
-        std::cout << '|'<<std::endl;
+        std::cout << std::setw(10)<< i + 1 <<'|';
+        std::cout << std::setw(10)<< trim_str(contact[i].print_firstname())<<'|';
+        std::cout << std::setw(10)<< trim_str(contact[i].print_lastname())<< '|';
+        std::cout << std::setw(10)<< trim_str(contact[i].print_nickname())<< '|'<<std::endl;
     }
 }
 void Phone_book::serch_contact(Contact *contact, int list_size)
@@ -65,12 +57,12 @@ int Phone_book::full_contact_first_del(Contact *contact)
         std::getline(std::cin,flag);
         if(flag == "yes")
         {
-            for(int i = 1;i < 8;i++)
-            {
-                contact[i - 1].del();
+            for(int i = 1; i < 8; i++) {
+                //contact[i - 1].del();
                 contact[i - 1] = contact[i];
+                //if(i == 7)
+                //    contact[i].del();
             }
-            contact[7].del();
             return (1);
         }
         else if(flag == "no")
@@ -81,13 +73,13 @@ int Phone_book::full_contact_first_del(Contact *contact)
     return (1);
 }
 
-void Phone_book::get_contact(Contact *contact, int *count)
+void Phone_book::add_contact(Contact *contact, int *count)
 {
     if (*count > 7)
     {
+        *count = 7;
         if(full_contact_first_del(contact) == -1)
             return;
-        *count = 7;
     }
     contact[*count].set();
 }
@@ -104,7 +96,7 @@ void Phone_book::god_book(void)
         std::getline(std::cin,input);
         if(input =="ADD")
         {
-            get_contact(contact, &count);
+            add_contact(contact, &count);
             count++;
         }
         else if(input == "SEARCH")

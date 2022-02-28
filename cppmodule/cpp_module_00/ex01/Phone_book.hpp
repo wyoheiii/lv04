@@ -13,10 +13,10 @@ class Phone_book
 
     private:
         Contact contact[8];
-        void    get_contact(Contact *contact, int *count);
+        void    add_contact(Contact *contact, int *count);
         int     full_contact_first_del(Contact *contact);
         void    serch(Contact *contact, int list_size);
-        std::string     set_str(std::string str);
+        std::string     trim_str(std::string str);
         void show_contact(Contact *contact,int list_size);
         void serch_contact(Contact *contact, int list_size);
 };

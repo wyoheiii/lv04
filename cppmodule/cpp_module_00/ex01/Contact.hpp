@@ -13,7 +13,6 @@ class Contact
         std::string    print_lastname();
         std::string    print_nickname();
         void    print_all();
-        void    del();
     private:
         std::string firstname;
         std::string lastname;

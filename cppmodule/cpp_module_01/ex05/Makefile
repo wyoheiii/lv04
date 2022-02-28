@@ -1,9 +1,9 @@
-SRCS = main.cpp File.cpp
+SRCS = main.cpp Karen.cpp
 OBJS = $(SRCS:.cpp=.o)
 CXX	= clang++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98#-g fsanitize=address
 RM = rm -f
-NAME = sed
+NAME = karen
 
 
 all:	$(NAME)

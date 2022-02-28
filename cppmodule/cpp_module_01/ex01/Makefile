@@ -1,9 +1,9 @@
 SRCS = main.cpp Zombie.cpp ZombieHorde.cpp
 OBJS =$(SRCS:.cpp=.o)
 CXX	= clang++
-CXXFLAGS	= -Wall -Wextra -Werror -I.
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -I.
 RM	= rm -f
-NAME	= NOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+NAME	= main
 
 all:		$(NAME)
 

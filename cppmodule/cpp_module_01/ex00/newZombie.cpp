@@ -1,6 +1,12 @@
 #include "Zombie.hpp"
 Zombie *newZombie(std::string name)
 {
-    Zombie *zombie = new Zombie(name);
+    Zombie *zombie ;
+    try{
+        zombie = new Zombie(name);
+    } catch (...){
+        std::cout << "new error" << std::endl;
+        std::exit(1);
+    }
     return zombie;
 }

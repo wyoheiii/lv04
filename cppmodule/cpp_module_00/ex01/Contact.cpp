@@ -37,11 +37,3 @@ void  Contact::set()
     std::getline(std::cin,this->darkestsecret);
     std::cout<<"OTU"<<std::endl;
 }
-void Contact::del()
-{
-    this->nickname.clear();
-    this->lastname.clear();
-    this->firstname.clear();
-    this->phonenumber.clear();
-    this->darkestsecret.clear();
-}
