@@ -25,10 +25,10 @@ void replace_file(char **av){
     std::string line;
     while(true) {
         getline(ifs, line);
-        while(true){
+        while(true) {
             if((position = line.find(file.get_str1())) == std::string::npos){
                 ofs << line;
-                break;
+                break ;
             }
             ofs  << line.substr(0,position) << file.get_str2();
             line = line.substr(position + file.get_str1().size());
