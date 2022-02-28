@@ -25,21 +25,18 @@ void replace_file(char **av){
     }
     std::size_t position;
     std::string line;
-    while(true) {
-        getline(ifs, line);
-        while(true) {
+    while(getline(ifs, line)) {
+        while(1) {
             if((position = line.find(file.get_str1())) == std::string::npos){
                 ofs << line;
                 break ;
             }
-            ofs  << line.substr(0,position) << file.get_str2();
+            ofs << line.substr(0,position) << file.get_str2();
             line = line.substr(position + file.get_str1().size());
         }
-        if(ifs.eof())
-            break;
-        ofs << std::endl;
+        if(!ifs.eof())
+            ofs << std::endl;
     }
-    //std::cout<<"open the file"<<std::endl;
 }
 
 int main(int ac, char **av){
