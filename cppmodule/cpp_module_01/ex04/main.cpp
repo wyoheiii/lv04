@@ -14,25 +14,25 @@ bool is_dir(char *av)
 void replace_file(char **av){
 
     File file(av[1],av[2],av[3]);
-    std::string line;
     std::ofstream ofs("newfile");
     std::ifstream ifs(file.get_file());
+
     if (ifs.fail() || ofs.fail()){
         std::cout<<"can't open the file"<<std::endl;
         std::exit(EXIT_FAILURE);
     }
+    std::size_t position;
+    std::string line;
     while(true) {
         getline(ifs, line);
         while(true){
-            //std::size_t position = line.find(file.get_str1());
-            if((position = line.find(file.get_str1())) != npos){
+            if((position = line.find(file.get_str1())) == std::string::npos){
                 ofs << line;
                 break;
             }
-
-
+            ofs  << line.substr(0,position) << file.get_str2();
+            line = line.substr(position + file.get_str1().size());
         }
-
         if(ifs.eof())
             break;
         ofs << std::endl;

@@ -33,7 +33,7 @@ void Phone_book::serch_contact(Contact *contact, int list_size)
     while(std::cin.good())
     {
         std::cout<<"SEARCH SIMASU SUUTI WO IRERO (1~8):";
-        std::getline(std::cin,str);
+        std::getline(std::cin, str);
         int j = atoi(str.c_str());
         if(str.size() == 1 && 9 > j && j > 0 && list_size >= j)
         {
