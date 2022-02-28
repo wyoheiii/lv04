@@ -57,12 +57,8 @@ int Phone_book::full_contact_first_del(Contact *contact)
         std::getline(std::cin,flag);
         if(flag == "yes")
         {
-            for(int i = 1; i < 8; i++) {
-                //contact[i - 1].del();
+            for(int i = 1; i < 8; i++)
                 contact[i - 1] = contact[i];
-                //if(i == 7)
-                //    contact[i].del();
-            }
             return (1);
         }
         else if(flag == "no")
