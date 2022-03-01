@@ -7,11 +7,13 @@ std::string File::get_str1()
 {return this->_str1;}
 std::string File::get_str2()
 {return this->_str2;}
-
+std::string File::get_newfile()
+{return this->_newfile;}
 File::File(char *file,char *str1,char *str2) {
     _file = file;
     _str1 = str1;
     _str2 = str2;
+    _newfile = _file + ".replace";
 }
 File::~File() {}
 

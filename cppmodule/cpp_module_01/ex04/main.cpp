@@ -11,9 +11,9 @@ bool is_dir(char *av)
     return (false);
 }
 
-void replace_file(char **av){
+void replace_file(File file){
 
-    File file(av[1],av[2],av[3]);
+
     // ofstream kakikomi
     std::ofstream ofs("newfile");
     // ifstream yomikomi
@@ -40,14 +40,17 @@ void replace_file(char **av){
 }
 
 int main(int ac, char **av){
-    char newfile[] = "newfile";
-
+    File file(av[1],av[2],av[3]);
     if(ac != 4) {
         std::cout << "av[1] filename, av[2] string1,av[3] string2" << std::endl;
         return (1);
     }
-    if(is_dir(av[1]) || is_dir(newfile))
+    if(!av[2][0]){
+        std::cout<< "arg err" << std::endl;
         return (1);
-    replace_file(av);
+    }
+    if(is_dir(av[1]))
+        return (1);
+    replace_file(file);
     return (0);
 }

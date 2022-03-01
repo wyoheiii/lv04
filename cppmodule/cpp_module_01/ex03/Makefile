@@ -1,4 +1,4 @@
-SRCS = main.cpp Karen.cpp
+SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJS =$(SRCS:.cpp=.o)
 CXX	= clang++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98  #-g -fsanitize=address
