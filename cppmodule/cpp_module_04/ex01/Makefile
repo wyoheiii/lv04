@@ -1,16 +1,14 @@
-SRCS = main.cpp Fixed.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 OBJS = $(SRCS:.cpp=.o)
-CXX	= c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98#-g fsanitize=address
+CXX	= c++ 
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 #-g fsanitize=address
 RM = rm -f
 NAME = a.out
-
 
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
 			$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
-
 
 clean:
 			$(RM) $(OBJS)
