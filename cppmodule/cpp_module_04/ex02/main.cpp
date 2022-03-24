@@ -22,7 +22,6 @@ int main(){
         std::cout << i << " :";
         delete ani[i];
     }
-
     std::cout << std::endl;
     std::cout <<"---pointa- iretemita---" <<std::endl;
     std::cout << std::endl;

@@ -9,7 +9,7 @@ Fixed::Fixed(const int value){
 }
 Fixed::Fixed(const float value){
     //std::cout<<"Float constructor called"<<std::endl;
-    this->_value = roundf(value * (1 << this->_bit));
+    this->_value = roundf(value * (1 << this->_bit));//指数部に8足して丸めてるだけ
 }
 Fixed::~Fixed(){
     //std::cout <<"Destructor called"<<std::endl; 
