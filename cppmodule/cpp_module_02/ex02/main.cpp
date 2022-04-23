@@ -82,8 +82,6 @@ int main()
   test("0x400001 * 1.33", Fixed(0x400001) * Fixed(1.33f));
   test("0x200001 * 2.33", Fixed(0x200001) * Fixed(2.33f));
   test("0x100001 * 4.004", Fixed(0x100001) * Fixed(4.004f));
-  test("not ovf", Fixed(1 << 22) * Fixed(1.99f));
-  test("ovf", Fixed(1 << 22) * Fixed(2));
   Fixed n;
   int i = 1073741825;
   n.setRawBits(i);

@@ -112,7 +112,7 @@ Fixed &Fixed::max(Fixed &a, Fixed &b){
         return b;
     return a;
 }
-Fixed const &Fixed::max(const Fixed &a,const Fixed &b){
+Fixed const &Fixed::max(const Fixed &a, const Fixed &b){
     //std::cout<<"tuyoi"<<std::endl;
     if(a < b)
         return b;

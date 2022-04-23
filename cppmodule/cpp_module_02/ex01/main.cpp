@@ -3,7 +3,7 @@ int main()
 {
     Fixed a; 
     //Default constructor called
-    Fixed const b( 2147483647 ); 
+    Fixed const b(10); 
     //Int constructor called
     Fixed const c( 42.42f );
     //Fixed const c( 0.42f );
