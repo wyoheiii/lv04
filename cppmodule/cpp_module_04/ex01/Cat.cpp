@@ -15,8 +15,11 @@ Cat::~Cat(){
 }
 Cat &Cat::operator=(const Cat &cat){
     if(this != &cat){
+        Brain *ret = new Brain();
         type = cat.type;
-        *_brain = *cat._brain;
+        *ret = *cat._brain;
+        delete this->_brain;
+        this->_brain = ret;
     }
     return *this;
 }

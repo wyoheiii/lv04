@@ -26,11 +26,12 @@ Brain::Brain(const Brain &b){
     std::cout<<"brain copy constructor"<<std::endl;
 }
 Brain &Brain::operator=(const Brain &b){
+    
     if(this != &b){
+
         for(int i = 0; i < 100 ;i++)
             ideas[i] = b.ideas[i];
         //*ideas = *b.ideas;
-        //これだと先頭のポインターだけかわる　全部のポインター渡すとデストラクターで死ぬ
     }
     return *this;
 }

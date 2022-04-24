@@ -50,6 +50,7 @@ Fixed Fixed::operator*(const Fixed &fixed)const {
     ret._value = tmp / (1 << this->_bit);
     return ret;
 }
+
 Fixed Fixed::operator/(const Fixed &fixed)const {
     if(fixed._value == 0){
         std::cout<<"0 ha yabai"<<std::endl;

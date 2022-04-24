@@ -15,9 +15,12 @@ Dog::~Dog(){
 }
 Dog &Dog::operator=(const Dog &dog){
     if(this != &dog){
+        Brain *ret = new Brain();
         type = dog.type;
-        *_brain = *dog._brain;
-    }    
+        *ret = *dog._brain;
+        delete this->_brain;
+        this->_brain = ret;
+    }
     return *this;
 }
 void Dog::makeSound()const{

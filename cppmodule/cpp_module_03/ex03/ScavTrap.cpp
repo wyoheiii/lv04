@@ -34,12 +34,24 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &scav){
 }
 
 void ScavTrap::attack(std::string target){
+    if(_EnergyPoints == 0)
+    {
+        std::cout << "ScavTrap no energypoints" << std::endl;
+        return;
+    }
+    _EnergyPoints--;
     if(_HitPoints == 0)
         std::cout<<"ScavTrap "<< _Name << " is already dead"<<std::endl;
     else
         std::cout<<"ScavTrap "<< _Name << " attack " << target <<" , causing "<< _AttackDamege <<" points of damage!"<<std::endl;
 }
 void ScavTrap::guardGate(){
+    if(_EnergyPoints == 0)
+    {
+        std::cout << "ScavTrap no energypoints" << std::endl;
+        return;
+    }
+    _EnergyPoints--;
     if(_HitPoints == 0)
         std::cout<<"ScavTrap "<< _Name << " is already dead"<<std::endl;
     else
