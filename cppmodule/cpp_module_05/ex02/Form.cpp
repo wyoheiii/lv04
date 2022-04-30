@@ -40,6 +40,13 @@ void Form::beSigned(const Bureaucrat &b){
     _sign = true;
 }
 
+void Form::execAndSignConfirmation(const Bureaucrat  &b) const{
+    if(!_sign)
+        throw NoSign();
+    if(_execGrade < b.getGrade())
+        throw execTooLow();
+}
+
 bool Form::getSign()const{
     return _sign;
 }
@@ -59,5 +66,14 @@ const char *Form::GradeTooHighException::what() const throw(){
 }
 const char *Form::GradeTooLowException::what() const throw(){
     return "Grade Too Low";
+}
+const char *Form::NoSign::what() const throw(){
+    return "No Sign";
+}
+const char *Form::CantOpen::what() const throw(){
+    return "cant open the file";
+}
+const char *Form::execTooLow::what() const throw(){
+    return "exec grade too low";
 }
 

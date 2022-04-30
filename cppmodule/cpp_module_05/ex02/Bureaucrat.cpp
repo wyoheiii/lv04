@@ -1,5 +1,7 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 Bureaucrat::Bureaucrat(){
     _name = "defo";
     _grade = 1;
@@ -72,10 +74,17 @@ void Bureaucrat::signForm(Form &f)const{
         f.beSigned(*this);
         //<bureaucrat> signed <form>
         std::cout << _name << " signed " << f.getName() << std::endl;
-    }
-    catch(std::exception const &e){
+    }catch(std::exception const &e){
         //<bureaucrat> couldn’t sign <form> because <reason>.
         std::cout << _name << " couldn’t sign "<< f.getName();
         std::cout << " because " << e.what() <<" ." << std::endl;
+    }
+}
+void Bureaucrat::executeForm(Form const &form){
+    try{
+        form.execute(*this);
+        std::cout << _name << " executes " << form.getName() << std::endl;
+    }catch(std::exception const &e){
+        std::cout  << "cant executed becouse " << e.what() << std::endl;
     }
 }

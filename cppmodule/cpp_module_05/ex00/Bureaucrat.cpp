@@ -49,7 +49,7 @@ Bureaucrat Bureaucrat::operator--(int){
     return old;
 }
 std::ostream &operator<<(std::ostream &os,const Bureaucrat &b){
-    os << b.getName() << " bureaucrat grade " << b.getGrade();
+    os << b.getName() << ", bureaucrat grade " << b.getGrade() << "." << std::endl;
     return os;
 }
 std::string Bureaucrat::getName()const{

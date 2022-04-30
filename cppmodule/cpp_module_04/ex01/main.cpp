@@ -22,24 +22,6 @@ int main(){
         std::cout << i << " :";
         delete ani[i];
     }
-
-    std::cout << std::endl;
-    std::cout <<"---pointa- iretemita---" <<std::endl;
-    std::cout << std::endl;
-    Cat *c = new Cat;
-    Cat *copycat(c);
-    std::cout << std::endl;
-    c->showideas_and_address();
-    copycat->showideas_and_address();
-    delete copycat;
-    std::cout << std::endl;
-    std::cout <<"---adoresu iretemita---" <<std::endl;
-    std::cout << std::endl;
-    Cat cc;
-    Cat *ccopycat(&cc);
-    std::cout << std::endl;
-    cc.showideas_and_address();
-    ccopycat->showideas_and_address();
     std::cout << std::endl;
     std::cout <<"---hutuuno iretemita---" <<std::endl;
     std::cout << std::endl;

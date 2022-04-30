@@ -25,7 +25,7 @@ class Bureaucrat{
     int getGrade()const;
 
     void signForm(Form &f) const;
-
+    void executeForm(Form const & form);
     class GradeTooLowException:public std::exception{
         virtual const char *what() const throw();
     };

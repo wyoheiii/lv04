@@ -40,7 +40,4 @@ int main(){
     wwa.makeSound();
     cca.makeSound();
     std::cout << std::endl;
-
-
-
 }

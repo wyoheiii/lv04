@@ -28,7 +28,6 @@ Brain::Brain(const Brain &b){
 Brain &Brain::operator=(const Brain &b){
     
     if(this != &b){
-
         for(int i = 0; i < 100 ;i++)
             ideas[i] = b.ideas[i];
         //*ideas = *b.ideas;

@@ -12,7 +12,6 @@ class Brain{
     ~Brain();
     Brain(const Brain &b);
     Brain &operator=(const Brain &b);
-    
     void showideas();
 };
 

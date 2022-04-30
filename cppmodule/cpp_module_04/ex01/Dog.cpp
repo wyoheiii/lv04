@@ -5,7 +5,7 @@ Dog::Dog():Animal(){
     std::cout << "dog constructor" << std::endl;
 }
 Dog::Dog(const Dog &ani):Animal(){
-    _brain = new Brain();
+    _brain = new Brain("string");
     *this = ani;
     std::cout << "dog copy constructor" << std::endl;
 }
