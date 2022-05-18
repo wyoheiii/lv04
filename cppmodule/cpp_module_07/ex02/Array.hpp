@@ -30,7 +30,6 @@ class Array{
         if(i < 0 || i >= _size)
             throw outOfRange();
         return _data[i];
-  
     };
     Array &operator=(const Array &a){
         if(this != &a)

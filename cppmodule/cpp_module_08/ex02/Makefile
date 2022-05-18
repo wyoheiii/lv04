@@ -1,9 +1,9 @@
-SRCS = main.cpp
+SRCS = main.cpp 
 OBJS = $(SRCS:.cpp=.o)
 CXX	= c++ 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 #-g fsanitize=address
 RM = rm -f
-NAME = a.out
+NAME = ex01
 
 all:	$(NAME)
 

@@ -2,11 +2,11 @@
 Span::~Span(){}
 Span::Span(){
     _size = 0;
+    _v.reserve(_size);
 }
 Span::Span(unsigned int n){
     _size = n;
     _v.reserve(n);
-
 }
 Span::Span(const Span &s){
     *this = s;
@@ -16,9 +16,6 @@ Span &Span::operator=(const Span &s){
         _v.reserve(s._size);
         _v = s._v;
         _size = s._size;
-        // std::cout<< s._size<<std::endl;
-        //  std::cout<< s._v.capacity()<<std::endl;
-        // std::cout<< _v.capacity()<<std::endl;
     }
     return *this;
 }
@@ -32,10 +29,19 @@ int Span::shortestSpan(){
         throw NoElementsOfComparison();
     std::vector<int>v2 = _v;
     std::sort(v2.begin(),v2.end());
-    int ret = std::abs(v2[0] - v2[1]);
-    for(size_t i = 0; i < v2.size() - 1; i++){
-        if(ret > std::abs(v2[i] - v2[i + 1]))
-            ret = std::abs(v2[i] - v2[i + 1]);
+    // int ret = std::abs(v2[0] - v2[1]);
+    // for(size_t i = 0; i < v2.size() - 1; i++){
+    //     if(ret > std::abs(v2[i] - v2[i + 1]))
+    //         ret = std::abs(v2[i] - v2[i + 1]);
+    // }
+    std::vector<int>::iterator first = v2.begin(); 
+    std::vector<int>::iterator second = v2.begin();
+    second++;
+    int ret = std::abs(*first - *second);
+    for(std::vector<int>::iterator end = v2.end(); second != end; second++){
+        if(ret > std::abs(*first - *second))
+            ret = std::abs(*first - *second);
+        first++;
     }
     return ret;
 }
@@ -47,12 +53,8 @@ int Span::longestSpan(){
     return max - min;
 }
 void Span::increaseToMax(){
-    if(static_cast<long>(_v.capacity()) - static_cast<long>(_v.size()) < 1){
-        std::cout <<_v.capacity()<<std::endl;
-        std::cout <<_v.size()<<std::endl;
-        std::cout << static_cast<long>(_v.capacity()) - static_cast<long>(_v.size()) <<std::endl;
+    if(static_cast<long>(_v.capacity()) - static_cast<long>(_v.size()) < 1)
         throw UpperLimits();
-    }
     for(size_t i = _v.size(); i < _v.capacity();i++)
         addNumber(i);
 }

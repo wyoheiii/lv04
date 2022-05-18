@@ -1,7 +1,7 @@
 #include "Span.hpp"
 
 int main(){
-
+    std::cout<< "pdf"<<std::endl;
     Span sp = Span(5);
     sp.addNumber(6);
     sp.addNumber(3);
@@ -43,6 +43,21 @@ int main(){
         std::cout << sp2.shortestSpan() << std::endl;
         std::cout << sp2.longestSpan() << std::endl;
         Span sp3 = sp2;
+        std::cout << sp2.shortestSpan() << std::endl;
+        std::cout << sp2.longestSpan() << std::endl;
+    }catch(std::exception &e){
+        std::cout << e.what() <<std::endl;
+    }
+    try{
+        std::cout<< "10 test"<<std::endl;
+        Span sp1 = Span(10);
+        Span sp2 = sp1;
+        sp2.addNumber(0);
+        sp2.addNumber(0);
+        //min 0
+        //max 100
+        sp2.addNumber(100);
+        sp2.increaseToMax();
         std::cout << sp2.shortestSpan() << std::endl;
         std::cout << sp2.longestSpan() << std::endl;
     }catch(std::exception &e){

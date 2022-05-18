@@ -8,6 +8,4 @@ typedef struct Data
     int i;
     long l;
 }Data;
-Data *deserialize(uintptr_t raw);
-uintptr_t serialize(Data *ptr);
 #endif // !data_hpp
